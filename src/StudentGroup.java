@@ -64,41 +64,94 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void add(Student student, int index) {
 		// Add your implementation here
+		this.students[index]=student;
+
 	}
 
 	@Override
 	public void remove(int index) {
 		// Add your implementation here
+		this.students[index] = null;
 	}
 
 	@Override
 	public void remove(Student student) {
 		// Add your implementation here
+		for (int i = 0; i < this.students.length; i++) {
+			// Delete Function
+			if (this.students[i] == student) {
+				for (int j = i + 1; i < this.students.length - 1; j++) {
+					this.students[i] = this.students[j];
+					i++;
+				}
+			}
+		}
 	}
 
 	@Override
 	public void removeFromIndex(int index) {
 		// Add your implementation here
+		for (int i = 0; i < this.students.length; i++) {
+			// Delete Function
+			if ( i == index) {
+				for (int j = i + 1; i < this.students.length - 1; j++) {
+					this.students[j] = null;
+					i++;
+				}
+			}
+		}
 	}
 
 	@Override
 	public void removeFromElement(Student student) {
 		// Add your implementation here
+		for (int i = 0; i < this.students.length; i++) {
+			// Delete Function
+			if (this.students[i] == student) {
+				for (int j = i + 1; i < this.students.length - 1; j++) {
+					this.students[j] = null;
+					i++;
+				}
+			}
+		}
 	}
 
 	@Override
 	public void removeToIndex(int index) {
 		// Add your implementation here
+		for (int i = 0; i < this.students.length; i++) {
+			if ( i == index) {
+			 for (int j=0;j < this.students.length ;j++ ) {
+			 	this.students[j]=null;
+			 }
+		}
+	}
 	}
 
 	@Override
 	public void removeToElement(Student student) {
 		// Add your implementation here
+
 	}
 
 	@Override
 	public void bubbleSort() {
 		// Add your implementation here
+		Student students[];
+		int n = this.students.length;
+			 Student temp = null;
+				for(int i=0; i < n; i++){
+								for(int j=1; j < (n-i); j++){
+												 if(this.students[j-1].compareTo(this.students[j]) < 0 ){
+																//swap elements
+																temp = this.students[j-1];
+																this.students[j-1] = this.students[j];
+																this.students[j] = temp;
+												}
+
+
+								}
+							}
 	}
 
 	@Override
